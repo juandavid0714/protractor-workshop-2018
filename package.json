@@ -4,7 +4,7 @@
   "description": "This is a Workshop about Protractor",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "build": "npm run clean && tsc",
     "test": "npm run build && protractor dist/protractor/local.config.js"
   },
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/juandavid0714/protractor-workshop-2018#readme",
   "dependencies": {
     "@types/node": "^12.0.10",
+    "jasmine-spec-reporter": "^4.2.1",
     "protractor": "^5.4.2"
   },
   "devDependencies": {
