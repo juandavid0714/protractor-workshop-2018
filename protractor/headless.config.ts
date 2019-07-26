@@ -11,10 +11,16 @@ export const config: Config = {
       args: ['--headless', '--disable-gpu']
     }
   },
+
   SELENIUM_PROMISE_MANAGER: false,
   onPrepare: () => {
     reporter();
     browser.ignoreSynchronization = true;
+  },
+
+  jasmineNodeOpts:{
+    showColors: true,
+    defaultTimeoutInterval: 1200000
   }
 
 };
