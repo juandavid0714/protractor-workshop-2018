@@ -9,5 +9,9 @@ export const config: Config = {
   onPrepare: () => {
     reporter();
     browser.ignoreSynchronization = true;
+  },
+  jasmineNodeOpts:{
+    showColors: true,
+    defaultTimeoutInterval: 1200000
   }
 };
