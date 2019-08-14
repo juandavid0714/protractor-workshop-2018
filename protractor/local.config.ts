@@ -5,13 +5,13 @@ export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
   SELENIUM_PROMISE_MANAGER: false,
-  getPageTimeout: 1000,
+  getPageTimeout: 30000,
   onPrepare: () => {
     reporter();
     browser.ignoreSynchronization = true;
   },
   jasmineNodeOpts:{
     showColors: true,
-    defaultTimeoutInterval: 1200000
+    defaultTimeoutInterval: 120000
   }
 };
