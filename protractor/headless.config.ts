@@ -4,7 +4,7 @@ import { reporter } from './helpers/reporter';
 export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
-  getPageTimeout: 1000,
+  getPageTimeout: 30000,
   capabilities: {
     browserName: 'chrome',
     chromeOptions: {
@@ -20,7 +20,7 @@ export const config: Config = {
 
   jasmineNodeOpts:{
     showColors: true,
-    defaultTimeoutInterval: 1200000
+    defaultTimeoutInterval: 120000
   }
 
 };
