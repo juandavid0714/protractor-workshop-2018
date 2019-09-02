@@ -1,24 +1,22 @@
-import { $, ElementFinder } from 'protractor';
+import { $, protractor, browser } from 'protractor';
 
 export class PaymentStepPage {
-  private sigInButton: ElementFinder;
-  private email: ElementFinder;
-  private password: ElementFinder;
-
-  constructor () {
-    this.sigInButton = $('#SubmitLogin > span');
-    this.email = $('#email');
-    this.password = $('#passwd');
-  }
+  private EC = protractor.ExpectedConditions;
+  private sigInButton = $('#SubmitLogin > span');
+  private email = $('#email');
+  private password = $('#passwd');
 
   public async registerEmail(): Promise<void> {
-    await this.sigInButton.click();
+    const isClickable = this.EC.elementToBeClickable(this.sigInButton);
+    browser.wait(isClickable, 15000);
+    this.sigInButton.click();
   }
 
   public async fillEmailPassword(): Promise<void> {
-    await this.sigInButton.click();
-    await this.email.sendKeys('aperdomobo@gmail.com');
-    await this.password.sendKeys('WorkshopProtractor');
+    const isVisible = this.EC.visibilityOf(this.email);
+    browser.wait(isVisible, 15000);
+    this.email.sendKeys('aperdomobo@gmail.com');
+    this.password.sendKeys('WorkshopProtractor');
   }
 
 }

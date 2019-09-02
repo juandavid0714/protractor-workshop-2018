@@ -1,13 +1,12 @@
-import { $, ElementFinder } from 'protractor';
+import { $, protractor, browser } from 'protractor';
 
 export class OrderSummaryPage {
-  private proceedToCheckoutButton: ElementFinder;
-
-  constructor () {
-    this.proceedToCheckoutButton = $('.cart_navigation span');
-  }
+  private EC = protractor.ExpectedConditions;
+  private proceedToCheckoutButton = $('.cart_navigation span');
 
   public async proceedToCheckout(): Promise<void> {
-    await this.proceedToCheckoutButton.click();
+    const isClickable = this.EC.elementToBeClickable(this.proceedToCheckoutButton);
+    browser.wait(isClickable, 15000);
+    this.proceedToCheckoutButton.click();
   }
 }

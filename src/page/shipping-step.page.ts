@@ -1,13 +1,12 @@
-import { $, ElementFinder } from 'protractor';
+import { $, protractor, browser } from 'protractor';
 
 export class ShippinStepPage {
-  private checkBoxAgreeTerms: ElementFinder;
-
-  constructor () {
-    this.checkBoxAgreeTerms = $('#cgv');
-  }
+  private EC = protractor.ExpectedConditions;
+  private checkBoxAgreeTerms = $('#cgv');
 
   public async selectCheckBoxAgreeTerms(): Promise<void> {
-    await this.checkBoxAgreeTerms.click();
+    const isClickable = this.EC.elementToBeClickable(this.checkBoxAgreeTerms);
+    browser.wait(isClickable, 5000);
+    this.checkBoxAgreeTerms.click();
   }
 }
