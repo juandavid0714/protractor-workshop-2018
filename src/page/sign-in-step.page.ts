@@ -1,8 +1,14 @@
-import { $, protractor, browser } from 'protractor';
+import { $, protractor, browser, ElementFinder } from 'protractor';
 
 export class SignInStepPage {
+
+  private payByBankWireOption: ElementFinder;
+
+  constructor () {
+    this.payByBankWireOption = $('#HOOK_PAYMENT > div:nth-child(1) > div > p > a');
+  }
+
   private EC = protractor.ExpectedConditions;
-  private payByBankWireOption = $('#HOOK_PAYMENT > div:nth-child(1) > div > p > a');
 
   public async payByBankWire(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.payByBankWireOption);

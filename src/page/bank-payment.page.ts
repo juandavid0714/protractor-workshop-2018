@@ -1,13 +1,17 @@
-import { $, protractor, browser } from 'protractor';
+import { $, protractor, browser, ElementFinder } from 'protractor';
 
 export class BankPaymentPage {
+  private proceedToCheckoutButton: ElementFinder;
+
+  constructor () {
+    this.proceedToCheckoutButton = $('[style*="display: block;"] .button-container > a');
+  }
 
   private EC = protractor.ExpectedConditions;
-  private proceedToCheckoutButton = $('[style*="display: block;"] .button-container > a');
 
   public async proceedToCheckout(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.proceedToCheckoutButton);
-    browser.wait(isClickable, 15000);
+    browser.wait(isClickable, 5000);
     this.proceedToCheckoutButton.click();
   }
 }

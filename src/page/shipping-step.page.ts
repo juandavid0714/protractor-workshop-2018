@@ -1,8 +1,14 @@
-import { $, protractor, browser } from 'protractor';
+import { $, protractor, browser, ElementFinder } from 'protractor';
 
 export class ShippinStepPage {
+
+  private checkBoxAgreeTerms: ElementFinder;
+
+  constructor () {
+    this.checkBoxAgreeTerms = $('#cgv');
+  }
+
   private EC = protractor.ExpectedConditions;
-  private checkBoxAgreeTerms = $('#cgv');
 
   public async selectCheckBoxAgreeTerms(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.checkBoxAgreeTerms);

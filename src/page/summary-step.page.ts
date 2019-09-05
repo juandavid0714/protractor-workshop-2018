@@ -1,9 +1,16 @@
-import { $, protractor, browser } from 'protractor';
+import { $, protractor, browser, ElementFinder } from 'protractor';
 
 export class SummaryStepPage {
+
+  private confirmOrderButton: ElementFinder;
+  private mensaje: ElementFinder;
+
+  constructor () {
+    this.confirmOrderButton = $('#cart_navigation > button > span');
+    this.mensaje = $('#center_column > div > p > strong');
+  }
+
   private EC = protractor.ExpectedConditions;
-  private confirmOrderButton = $('#cart_navigation > button > span');
-  private mensaje = $('#center_column > div > p > strong');
 
   public async confirmOrder(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.confirmOrderButton);

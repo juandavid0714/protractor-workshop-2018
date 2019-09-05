@@ -22,21 +22,21 @@ describe('Buy a t-shirt', () => {
   const signInStepPage: SignInStepPage = new SignInStepPage();
   const summaryStepPage: SummaryStepPage = new SummaryStepPage();
 
-  it('then should be bought a t-shirt', async () => {
-    describe('when open Products Page', () => {
-      beforeEach(async () => {
-        await browser.get('http://automationpractice.com/');
-        await menuContentPage.goToTShirtMenu();
-        await addressStepPage.addToCar();
-        await bankPaymentPage.proceedToCheckout();
-        await orderSummaryPage.proceedToCheckout();
-        await paymentStepPage.fillEmailPassword();
-        await paymentStepPage.registerEmail();
-        await productAddedModalPage.proceedToCheckout();
-        await shippinStepPage.selectCheckBoxAgreeTerms();
-        await productListPage.proceedToCheckout();
-        await signInStepPage.payByBankWire();
-        await summaryStepPage.confirmOrder();
+  describe('then should be bought a t-shirt', async () => {
+    beforeEach(async () => {
+      await browser.get('http://automationpractice.com/');
+      await menuContentPage.goToTShirtMenu();
+      await addressStepPage.addToCar();
+      await bankPaymentPage.proceedToCheckout();
+      await orderSummaryPage.proceedToCheckout();
+      await paymentStepPage.fillEmailPassword();
+      await paymentStepPage.registerEmail();
+      await productAddedModalPage.proceedToCheckout();
+      await shippinStepPage.selectCheckBoxAgreeTerms();
+      await productListPage.proceedToCheckout();
+      await signInStepPage.payByBankWire();
+      await summaryStepPage.confirmOrder();
+      it('Verify that your order is complete', async () => {
         await expect(summaryStepPage.mensajeText())
       .toBe('Your order on My Store is complete.');
       });
