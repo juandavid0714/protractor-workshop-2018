@@ -22,7 +22,7 @@ describe('Buy a t-shirt', () => {
   const signInStepPage: SignInStepPage = new SignInStepPage();
   const summaryStepPage: SummaryStepPage = new SummaryStepPage();
 
-  describe('then should be bought a t-shirt', async () => {
+  describe('then should be bought a t-shirt', () => {
     beforeEach(async () => {
       await browser.get('http://automationpractice.com/');
       await menuContentPage.goToTShirtMenu();
@@ -36,10 +36,10 @@ describe('Buy a t-shirt', () => {
       await productListPage.proceedToCheckout();
       await signInStepPage.payByBankWire();
       await summaryStepPage.confirmOrder();
-      it('Verify that your order is complete', async () => {
-        await expect(summaryStepPage.mensajeText())
+    });
+    it('Verify that your order is complete', async () => {
+      await expect(summaryStepPage.mensajeText())
       .toBe('Your order on My Store is complete.');
-      });
     });
   });
 });
