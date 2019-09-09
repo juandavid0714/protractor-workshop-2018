@@ -4,7 +4,7 @@ export class BankPaymentPage {
   private proceedToCheckoutButton: ElementFinder;
 
   constructor () {
-    this.proceedToCheckoutButton = $('#layer_cart .layer_cart_cart div.button-container > a');
+    this.proceedToCheckoutButton = $('[style*="display: block;"] .button-container > a');
   }
 
   private EC = protractor.ExpectedConditions;
