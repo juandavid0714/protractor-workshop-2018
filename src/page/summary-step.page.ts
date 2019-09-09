@@ -15,7 +15,7 @@ export class SummaryStepPage {
   public async confirmOrder(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.confirmOrderButton);
     browser.wait(isClickable, 5000);
-    this.confirmOrderButton.click();
+    await this.confirmOrderButton.click();
   }
 
   public async mensajeText(): Promise<string> {

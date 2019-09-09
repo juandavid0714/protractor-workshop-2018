@@ -13,6 +13,6 @@ export class ShippinStepPage {
   public async selectCheckBoxAgreeTerms(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.checkBoxAgreeTerms);
     browser.wait(isClickable, 5000);
-    this.checkBoxAgreeTerms.click();
+    await this.checkBoxAgreeTerms.click();
   }
 }

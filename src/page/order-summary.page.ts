@@ -13,6 +13,6 @@ export class OrderSummaryPage {
   public async proceedToCheckout(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.proceedToCheckoutButton);
     browser.wait(isClickable, 5000);
-    this.proceedToCheckoutButton.click();
+    await this.proceedToCheckoutButton.click();
   }
 }

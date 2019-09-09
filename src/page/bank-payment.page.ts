@@ -4,7 +4,7 @@ export class BankPaymentPage {
   private proceedToCheckoutButton: ElementFinder;
 
   constructor () {
-    this.proceedToCheckoutButton = $('[style*="display: block;"] .button-container > a');
+    this.proceedToCheckoutButton = $('#layer_cart .layer_cart_cart div.button-container > a');
   }
 
   private EC = protractor.ExpectedConditions;
@@ -12,6 +12,6 @@ export class BankPaymentPage {
   public async proceedToCheckout(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.proceedToCheckoutButton);
     browser.wait(isClickable, 5000);
-    this.proceedToCheckoutButton.click();
+    await this.proceedToCheckoutButton.click();
   }
 }
