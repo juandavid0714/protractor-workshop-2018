@@ -12,7 +12,7 @@ export class SignInStepPage {
 
   public async payByBankWire(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.payByBankWireOption);
-    browser.wait(isClickable, 5000);
+    await browser.wait(isClickable, 2000);
     await this.payByBankWireOption.click();
   }
 }

@@ -16,7 +16,7 @@ export class PaymentStepPage {
 
   public async registerEmail(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.sigInButton);
-    browser.wait(isClickable, 5000);
+    await browser.wait(isClickable, 2000);
     await this.sigInButton.click();
   }
 

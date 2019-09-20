@@ -14,13 +14,13 @@ export class SummaryStepPage {
 
   public async confirmOrder(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.confirmOrderButton);
-    browser.wait(isClickable, 5000);
+    await browser.wait(isClickable, 2000);
     await this.confirmOrderButton.click();
   }
 
   public async mensajeText(): Promise<string> {
     const isVisible = this.EC.presenceOf(this.mensaje);
-    browser.wait(isVisible, 5000);
+    await browser.wait(isVisible, 2000);
     const mensaje = this.mensaje.getText();
     return mensaje;
   }

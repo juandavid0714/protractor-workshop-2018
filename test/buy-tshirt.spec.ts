@@ -5,10 +5,10 @@ import { BankPaymentPage } from '../src/page/bank-payment.page';
 import { OrderSummaryPage } from '../src/page/order-summary.page';
 import { PaymentStepPage } from '../src/page/payment-step.page';
 import { ProductAddedModalPage } from '../src/page/product-added-modal.page';
-import { ProductListPage } from '../src/page/product-list.page';
 import { ShippinStepPage } from '../src/page/shipping-step.page';
 import { SignInStepPage } from '../src/page/sign-in-step.page';
 import { SummaryStepPage } from '../src/page/summary-step.page';
+import { ProductAddedPage } from '../src/page/product-added.page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -17,29 +17,38 @@ describe('Buy a t-shirt', () => {
   const orderSummaryPage: OrderSummaryPage = new OrderSummaryPage();
   const paymentStepPage: PaymentStepPage = new PaymentStepPage();
   const productAddedModalPage: ProductAddedModalPage = new ProductAddedModalPage();
-  const productListPage: ProductListPage = new ProductListPage();
   const shippinStepPage: ShippinStepPage = new ShippinStepPage();
   const signInStepPage: SignInStepPage = new SignInStepPage();
   const summaryStepPage: SummaryStepPage = new SummaryStepPage();
+  const productAddedPage: ProductAddedPage = new ProductAddedPage();
 
   describe('then should be bought a t-shirt', () => {
+
     beforeEach(async () => {
       await browser.get('http://automationpractice.com/');
-      await menuContentPage.goToTShirtMenu();
-      await addressStepPage.addToCar();
-      await bankPaymentPage.proceedToCheckout();
-      await orderSummaryPage.proceedToCheckout();
-      await paymentStepPage.fillEmailPassword();
-      await paymentStepPage.registerEmail();
-      await productAddedModalPage.proceedToCheckout();
-      await shippinStepPage.selectCheckBoxAgreeTerms();
-      await productListPage.proceedToCheckout();
-      await signInStepPage.payByBankWire();
-      await summaryStepPage.confirmOrder();
     });
-    it('Verify that your order is complete', async () => {
-      await expect(summaryStepPage.mensajeText())
-      .toBe('Your order on My Store is complete.');
+
+    describe('this is a test', () => {
+
+      beforeEach(async () => {
+        await menuContentPage.goToTShirtMenu();
+        await addressStepPage.selectProduct();
+        await productAddedPage.addToCar();
+        await bankPaymentPage.proceedToCheckout();
+        await orderSummaryPage.proceedToCheckout();
+        await paymentStepPage.fillEmailPassword();
+        await paymentStepPage.registerEmail();
+        await productAddedModalPage.proceedToCheckout();
+        await shippinStepPage.selectCheckBoxAgreeTerms();
+        await shippinStepPage.proceedToCheckout();
+        await signInStepPage.payByBankWire();
+        await summaryStepPage.confirmOrder();
+      });
+
+      it('Verify that your order is complete', async () => {
+        await expect(summaryStepPage.mensajeText())
+        .toBe('Your order on My Store is complete.');
+      });
     });
   });
 });

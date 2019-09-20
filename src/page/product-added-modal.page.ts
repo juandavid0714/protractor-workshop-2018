@@ -12,7 +12,7 @@ export class ProductAddedModalPage {
 
   public async proceedToCheckout(): Promise<void> {
     const isClickable = this.EC.elementToBeClickable(this.proceedToCheckoutButton);
-    browser.wait(isClickable, 5000);
+    await browser.wait(isClickable, 2000);
     await this.proceedToCheckoutButton.click();
   }
 }

@@ -1,13 +1,14 @@
 import { $, ElementFinder } from 'protractor';
 
 export class AddressStepPage {
-  private addToCarButton: ElementFinder;
+  private productImage: ElementFinder;
 
   constructor () {
-    this.addToCarButton = $('#center_column a.button.ajax_add_to_cart_button.btn.btn-default');
+    this.productImage = $('#center_column a.product_img_link > img');
   }
 
-  public async addToCar(): Promise<void> {
-    await this.addToCarButton.click();
+  public async selectProduct(): Promise<void> {
+    await this.productImage.click();
   }
+
 }
