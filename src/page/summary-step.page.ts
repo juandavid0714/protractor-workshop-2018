@@ -3,11 +3,11 @@ import { $, protractor, browser, ElementFinder } from 'protractor';
 export class SummaryStepPage {
 
   private confirmOrderButton: ElementFinder;
-  private mensaje: ElementFinder;
+  private message: ElementFinder;
 
   constructor () {
     this.confirmOrderButton = $('#cart_navigation > button > span');
-    this.mensaje = $('#center_column > div > p > strong');
+    this.message = $('#center_column > div > p > strong');
   }
 
   private EC = protractor.ExpectedConditions;
@@ -19,10 +19,10 @@ export class SummaryStepPage {
   }
 
   public async mensajeText(): Promise<string> {
-    const isVisible = this.EC.presenceOf(this.mensaje);
+    const isVisible = this.EC.presenceOf(this.message);
     await browser.wait(isVisible, 2000);
-    const mensaje = this.mensaje.getText();
-    return mensaje;
+    const message = this.message.getText();
+    return message;
   }
 
 }

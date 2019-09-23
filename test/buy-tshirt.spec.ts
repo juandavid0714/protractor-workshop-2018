@@ -28,7 +28,7 @@ describe('Buy a t-shirt', () => {
       await browser.get('http://automationpractice.com/');
     });
 
-    describe('this is a test', () => {
+    describe('this execute all the lines into the beforeEach', () => {
 
       beforeEach(async () => {
         await menuContentPage.goToTShirtMenu();

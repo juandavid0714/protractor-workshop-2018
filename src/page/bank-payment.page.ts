@@ -4,7 +4,6 @@ export class BankPaymentPage {
   private proceedToCheckoutButton: ElementFinder;
 
   constructor () {
-    // tslint:disable-next-line: max-line-length
     this.proceedToCheckoutButton = $('a.btn.btn-default.button.button-medium span');
   }
 
