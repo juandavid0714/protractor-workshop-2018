@@ -1,4 +1,4 @@
-import { $, protractor, browser, ElementFinder } from 'protractor';
+import { $, ElementFinder, browser, protractor } from 'protractor';
 
 export class BankPaymentPage {
   private proceedToCheckoutButton: ElementFinder;

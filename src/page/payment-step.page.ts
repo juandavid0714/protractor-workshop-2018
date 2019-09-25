@@ -1,4 +1,4 @@
-import { $, protractor, browser, ElementFinder } from 'protractor';
+import { $, ElementFinder } from 'protractor';
 
 export class PaymentStepPage {
 
@@ -12,11 +12,7 @@ export class PaymentStepPage {
     this.password = $('#passwd');
   }
 
-  private EC = protractor.ExpectedConditions;
-
   public async registerEmail(): Promise<void> {
-    const isClickable = this.EC.elementToBeClickable(this.sigInButton);
-    await browser.wait(isClickable, 2000);
     await this.sigInButton.click();
   }
 

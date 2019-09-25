@@ -1,4 +1,4 @@
-import { $, protractor, browser, ElementFinder } from 'protractor';
+import { $, ElementFinder } from 'protractor';
 
 export class SummaryStepPage {
 
@@ -10,17 +10,11 @@ export class SummaryStepPage {
     this.message = $('#center_column > div > p > strong');
   }
 
-  private EC = protractor.ExpectedConditions;
-
   public async confirmOrder(): Promise<void> {
-    const isClickable = this.EC.elementToBeClickable(this.confirmOrderButton);
-    await browser.wait(isClickable, 2000);
     await this.confirmOrderButton.click();
   }
 
   public async mensajeText(): Promise<string> {
-    const isVisible = this.EC.presenceOf(this.message);
-    await browser.wait(isVisible, 2000);
     const message = this.message.getText();
     return message;
   }
