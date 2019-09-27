@@ -17,8 +17,8 @@ export class PaymentStepPage {
   }
 
   public async fillEmailPassword(): Promise<void> {
-    this.email.sendKeys('aperdomobo@gmail.com');
-    this.password.sendKeys('WorkshopProtractor');
+    await this.email.sendKeys('aperdomobo@gmail.com');
+    await this.password.sendKeys('WorkshopProtractor');
   }
 
 }
