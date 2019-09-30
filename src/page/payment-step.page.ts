@@ -3,13 +3,13 @@ import { $, ElementFinder } from 'protractor';
 export class PaymentStepPage {
 
   private sigInButton: ElementFinder;
-  private email: ElementFinder;
-  private password: ElementFinder;
+  private emailTxt: ElementFinder;
+  private passwordTxt: ElementFinder;
 
   constructor () {
     this.sigInButton = $('#SubmitLogin > span');
-    this.email = $('#email');
-    this.password = $('#passwd');
+    this.emailTxt = $('#email');
+    this.passwordTxt = $('#passwd');
   }
 
   public async registerEmail(): Promise<void> {
@@ -17,8 +17,8 @@ export class PaymentStepPage {
   }
 
   public async fillEmailPassword(): Promise<void> {
-    await this.email.sendKeys('aperdomobo@gmail.com');
-    await this.password.sendKeys('WorkshopProtractor');
+    await this.emailTxt.sendKeys('aperdomobo@gmail.com');
+    await this.passwordTxt.sendKeys('WorkshopProtractor');
   }
 
 }

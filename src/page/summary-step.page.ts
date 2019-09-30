@@ -15,8 +15,7 @@ export class SummaryStepPage {
   }
 
   public async mensajeText(): Promise<string> {
-    const message = this.message.getText();
-    return message;
+    return this.message.getText();
   }
 
 }

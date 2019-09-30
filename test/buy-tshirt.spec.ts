@@ -1,14 +1,6 @@
 import { browser } from 'protractor';
-import { MenuContentPage } from '../src/page';
-import { AddressStepPage } from '../src/page/address-step.page';
-import { BankPaymentPage } from '../src/page/bank-payment.page';
-import { OrderSummaryPage } from '../src/page/order-summary.page';
-import { PaymentStepPage } from '../src/page/payment-step.page';
-import { ProductAddedModalPage } from '../src/page/product-added-modal.page';
-import { ShippinStepPage } from '../src/page/shipping-step.page';
-import { SignInStepPage } from '../src/page/sign-in-step.page';
-import { SummaryStepPage } from '../src/page/summary-step.page';
-import { ProductAddedPage } from '../src/page/product-added.page';
+import { MenuContentPage, AddressStepPage, BankPaymentPage, OrderSummaryPage, PaymentStepPage,
+   ProductAddedModalPage, ShippinStepPage, SignInStepPage, SummaryStepPage, ProductAddedPage  } from '../src/page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -46,7 +38,7 @@ describe('Buy a t-shirt', () => {
       });
 
       it('Verify that your order is complete', async () => {
-        await expect(summaryStepPage.mensajeText())
+        expect(await summaryStepPage.mensajeText())
         .toBe('Your order on My Store is complete.');
       });
     });
