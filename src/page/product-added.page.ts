@@ -4,7 +4,7 @@ export class ProductAddedPage {
   private addToCarButton: ElementFinder;
 
   constructor () {
-    this.addToCarButton = $('#add_to_cart > button > span');
+    this.addToCarButton = $('#add_to_cart > button');
   }
 
   public async addToCar(): Promise<void> {

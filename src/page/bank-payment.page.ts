@@ -5,7 +5,7 @@ export class BankPaymentPage {
   private EC = protractor.ExpectedConditions;
 
   constructor () {
-    this.proceedToCheckoutButton = $('a.btn.btn-default.button.button-medium span');
+    this.proceedToCheckoutButton = $('#layer_cart div.button-container > a');
   }
 
   public async proceedToCheckout(): Promise<void> {

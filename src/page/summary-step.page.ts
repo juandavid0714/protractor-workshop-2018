@@ -6,8 +6,8 @@ export class SummaryStepPage {
   private message: ElementFinder;
 
   constructor () {
-    this.confirmOrderButton = $('#cart_navigation > button > span');
-    this.message = $('#center_column > div > p > strong');
+    this.confirmOrderButton = $('#cart_navigation > button');
+    this.message = $('#center_column strong');
   }
 
   public async confirmOrder(): Promise<void> {
