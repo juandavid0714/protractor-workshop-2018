@@ -1,6 +1,7 @@
 import { browser } from 'protractor';
 import { MenuContentPage, AddressStepPage, BankPaymentPage, OrderSummaryPage, PaymentStepPage,
-   ProductAddedModalPage, ShippinStepPage, SignInStepPage, SummaryStepPage, ProductAddedPage  } from '../src/page';
+   ProductAddedModalPage, ShippinStepPage, SignInStepPage, SummaryStepPage, ProductAddedPage,
+   ProductListPage  } from '../src/page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -13,6 +14,7 @@ describe('Buy a t-shirt', () => {
   const signInStepPage: SignInStepPage = new SignInStepPage();
   const summaryStepPage: SummaryStepPage = new SummaryStepPage();
   const productAddedPage: ProductAddedPage = new ProductAddedPage();
+  const productListPage: ProductListPage = new ProductListPage();
 
   describe('then should be bought a t-shirt', () => {
 
@@ -31,7 +33,7 @@ describe('Buy a t-shirt', () => {
         await paymentStepPage.fillEmailPassword();
         await paymentStepPage.registerEmail();
         await productAddedModalPage.proceedToCheckout();
-        await shippinStepPage.selectCheckBoxAgreeTerms();
+        await productListPage.selectCheckBoxAgreeTerms();
         await shippinStepPage.proceedToCheckout();
         await signInStepPage.payByBankWire();
         await summaryStepPage.confirmOrder();
