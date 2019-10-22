@@ -11,4 +11,5 @@ export class SignInStepPage {
   public async payByBankWire(): Promise<void> {
     await this.payByBankWireOption.click();
   }
+
 }

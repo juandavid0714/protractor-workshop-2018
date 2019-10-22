@@ -7,4 +7,3 @@ export { ProductAddedModalPage } from './product-added-modal.page';
 export { ShippinStepPage } from './shipping-step.page';
 export { SignInStepPage } from './sign-in-step.page';
 export { SummaryStepPage } from './summary-step.page';
-export { ProductAddedPage } from './product-added.page';

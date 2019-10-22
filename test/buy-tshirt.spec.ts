@@ -1,6 +1,6 @@
 import { browser } from 'protractor';
 import { MenuContentPage, AddressStepPage, BankPaymentPage, OrderSummaryPage, PaymentStepPage,
-   ProductAddedModalPage, ShippinStepPage, SignInStepPage, SummaryStepPage, ProductAddedPage  } from '../src/page';
+   ProductAddedModalPage, ShippinStepPage, SignInStepPage, SummaryStepPage  } from '../src/page';
 
 describe('Buy a t-shirt', () => {
   const menuContentPage: MenuContentPage = new MenuContentPage();
@@ -12,7 +12,6 @@ describe('Buy a t-shirt', () => {
   const shippinStepPage: ShippinStepPage = new ShippinStepPage();
   const signInStepPage: SignInStepPage = new SignInStepPage();
   const summaryStepPage: SummaryStepPage = new SummaryStepPage();
-  const productAddedPage: ProductAddedPage = new ProductAddedPage();
 
   describe('then should be bought a t-shirt', () => {
 
@@ -25,7 +24,7 @@ describe('Buy a t-shirt', () => {
       beforeEach(async () => {
         await menuContentPage.goToTShirtMenu();
         await addressStepPage.selectProduct();
-        await productAddedPage.addToCar();
+        await addressStepPage.addToCar();
         await bankPaymentPage.proceedToCheckout();
         await orderSummaryPage.proceedToCheckout();
         await paymentStepPage.fillEmailPassword();
