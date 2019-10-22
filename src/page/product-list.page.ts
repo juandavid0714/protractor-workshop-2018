@@ -1,13 +1,15 @@
 import { $, ElementFinder } from 'protractor';
 
 export class ProductListPage {
-  private proceedToCheckoutButton: ElementFinder;
+
+  private checkBoxAgreeTerms: ElementFinder;
 
   constructor () {
-    this.proceedToCheckoutButton = $('#form > p > button > span');
+    this.checkBoxAgreeTerms = $('#uniform-cgv');
   }
 
-  public async proceedToCheckout(): Promise<void> {
-    await this.proceedToCheckoutButton.click();
+  public async selectCheckBoxAgreeTerms(): Promise<void> {
+    await this.checkBoxAgreeTerms.click();
   }
+
 }

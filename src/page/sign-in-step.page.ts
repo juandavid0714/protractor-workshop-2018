@@ -1,6 +1,7 @@
 import { $, ElementFinder } from 'protractor';
 
 export class SignInStepPage {
+
   private payByBankWireOption: ElementFinder;
 
   constructor () {
@@ -10,4 +11,5 @@ export class SignInStepPage {
   public async payByBankWire(): Promise<void> {
     await this.payByBankWireOption.click();
   }
+
 }

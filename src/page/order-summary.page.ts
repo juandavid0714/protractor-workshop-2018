@@ -1,10 +1,11 @@
 import { $, ElementFinder } from 'protractor';
 
 export class OrderSummaryPage {
+
   private proceedToCheckoutButton: ElementFinder;
 
   constructor () {
-    this.proceedToCheckoutButton = $('.cart_navigation span');
+    this.proceedToCheckoutButton = $('#center_column a.button.btn.btn-default.standard-checkout.button-medium');
   }
 
   public async proceedToCheckout(): Promise<void> {
