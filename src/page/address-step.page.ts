@@ -17,8 +17,6 @@ export class AddressStepPage {
   }
 
   public async addToCar(): Promise<void> {
-    const isClickable = this.EC.elementToBeClickable(this.productImage);
-    await browser.wait(isClickable, 2000);
     await this.addToCarButton.click();
   }
 
